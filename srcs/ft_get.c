@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 12:48:44 by tnard             #+#    #+#             */
-/*   Updated: 2022/03/24 12:51:56 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2022/03/24 13:23:35 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,9 +118,11 @@ t_hosts *ft_get_hosts(char *str)
 	srand(time(NULL));
 	max = ft_get_line(str);
 	hosts = malloc(sizeof(t_hosts) * max + 1);
+	y = 0;
 	while (fgets(buffer, MAX_LENGTH, fp))
 	{
-		buffer[strlen(buffer) - 1] = '\0';
+		if (buffer[strlen(buffer) - 1] == '\n')
+			buffer[strlen(buffer) - 1] = '\0';
 		hosts[y].status = 0;
 		hosts[y].ip = strdup(buffer);
 		hosts[y].port = 22;
@@ -130,7 +132,7 @@ t_hosts *ft_get_hosts(char *str)
 		y++;
 	}
 	y--;
-	dprintf(1, "\033[2K\r\033[1;32m[+]\033[0m %u hosts loaded (%s:%d)\e[0m", y + 2, hosts[y].ip, hosts[y].port);
+	dprintf(1, "\033[2K\r\033[1;32m[+]\033[0m %u hosts loaded (%s:%d)\e[0m", y + 1, hosts[y].ip, hosts[y].port);
 	printf("\n");
 	fclose(fp);
 	return (hosts);

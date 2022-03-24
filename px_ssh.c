@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 12:30:15 by tnard             #+#    #+#             */
-/*   Updated: 2022/03/24 12:59:28 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2022/03/24 13:28:54 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int ft_usage(void)
 	return (-1);
 }
 
-int main(int argc, char *argv[]) //Y en a un qui se perd et jsais pas pk :( (si je le trouve faut remove tout les +1 et -1)
+int main(int argc, char *argv[])
 {
 	int	nb_threads;
 	int64_t	start;
@@ -43,14 +43,14 @@ int main(int argc, char *argv[]) //Y en a un qui se perd et jsais pas pk :( (si 
 		while (1)
 		{
 			usleep(1000);
-			if (ft_count(hosts, nb_hosts, 2) + ft_count(hosts, nb_hosts, 3) == nb_hosts - 1)
+			if (ft_count(hosts, nb_hosts, 2) + ft_count(hosts, nb_hosts, 3) == nb_hosts)
 			{
 				dprintf(1, "\033[2K\r\033[1;32m[+]\033[0m Work finished !\n");
-				dprintf(1, "\033[2K\r\033[1;32mFailed : %d, Success : %d, Skipped : %d, Wtf : %d | Elapsed time : %ld\n", ft_count(hosts, nb_hosts, 2), ft_count(hosts, nb_hosts, 3), ft_count(hosts, nb_hosts, 0) - 1, ft_count(hosts, nb_hosts, 1), (get_time() - start) / 1000);
+				dprintf(1, "\033[2K\r\033[1;32mFailed : %d, Success : %d, Skipped : %d, Wtf : %d | Elapsed time : %ld\n", ft_count(hosts, nb_hosts, 2), ft_count(hosts, nb_hosts, 3), ft_count(hosts, nb_hosts, 0), ft_count(hosts, nb_hosts, 1), (get_time() - start) / 1000);
 				return (0);
 			}
 			else
-				dprintf(1, "\033[2K\r\033[1;32mFailed : %d, Success : %d, Left : %d, Current : %d | Estimed time : %d seconds\e[0m", ft_count(hosts, nb_hosts, 2), ft_count(hosts, nb_hosts, 3), ft_count(hosts, nb_hosts, 0) - 1, ft_count(hosts, nb_hosts, 1), (((ft_count(hosts, nb_hosts, 1) + ft_count(hosts, nb_hosts, 0)) * nb_combo) / nb_threads) * 5);
+				dprintf(1, "\033[2K\r\033[1;32mFailed : %d, Success : %d, Left : %d, Current : %d | Estimed time : %d seconds\e[0m", ft_count(hosts, nb_hosts, 2), ft_count(hosts, nb_hosts, 3), ft_count(hosts, nb_hosts, 0), ft_count(hosts, nb_hosts, 1), (((ft_count(hosts, nb_hosts, 1) + ft_count(hosts, nb_hosts, 0)) * nb_combo) / nb_threads) * 5);
 		}
 	}
 	else

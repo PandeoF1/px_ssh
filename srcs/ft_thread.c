@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 12:48:09 by tnard             #+#    #+#             */
-/*   Updated: 2022/03/24 12:59:24 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2022/03/24 13:26:27 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ void ft_thread(void *content)
 		while (x < threads->nb_hosts)
 		{
 			if (threads->hosts[x].ip == NULL || threads->hosts[x].port == 0 || threads->hosts[x].status == 1)
-			{
 				x++;
-			}
 			else if (threads->hosts[x].status == 0)
 			{
 				threads->hosts[x].status = 1;
