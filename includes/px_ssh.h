@@ -57,17 +57,19 @@ typedef struct s_threads
 }				t_threads;
 
 void 			ft_thread(void *content);
-t_threads 	*ft_create_thread(int nb_threads, t_hosts *hosts, t_combo *combos, unsigned int nb_hosts, unsigned int nb_combo, char *output);
-int64_t		get_time(void);
-int			ft_is_done(t_hosts *hosts, unsigned int nb_hosts);
-int			ft_count(t_hosts *hosts, unsigned int nb_hosts, int y);
-int			ft_left(t_hosts *hosts, unsigned int nb_hosts);
-int			ft_intlen(int n);
-int			ft_splitlen(char **split);
+t_threads 		*ft_create_thread(int nb_threads, t_hosts *hosts, t_combo *combos, unsigned int nb_hosts, unsigned int nb_combo, char *output);
+int64_t			get_time(void);
+int				ft_is_done(t_hosts *hosts, unsigned int nb_hosts);
+int				ft_count(t_hosts *hosts, unsigned int nb_hosts, int y);
+int				ft_left(t_hosts *hosts, unsigned int nb_hosts);
+int				ft_intlen(int n);
+int				ft_splitlen(char **split);
 void			ft_free_split(char **split);
 t_combo 		*ft_get_combos(char *str);
 unsigned int	ft_get_line(char *str);
-t_hosts		*ft_get_hosts(char *str);
+t_hosts			*ft_get_hosts(char *str);
 char			*ft_get_file(int fd, int size, int len);
+char			*ft_strnjoin(char *s1, char *s2, int n); //fre first
+char			*ft_strnjoinf(char *s1, char *s2, int n); //free second
 
 #endif

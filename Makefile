@@ -6,7 +6,7 @@
 #    By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/24 12:35:04 by tnard             #+#    #+#              #
-#    Updated: 2022/03/24 12:53:01 by tnard            ###   ########lyon.fr    #
+#    Updated: 2022/03/25 22:58:19 by tnard            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ RED			= \033[0;31m
 RST			= \033[0m
 END			= \e[0m
 
-SRCS		= px_ssh.c srcs/ft_count.c srcs/ft_get.c srcs/ft_get_file.c srcs/ft_thread.c srcs/get_time.c
+SRCS		= px_ssh.c srcs/ft_count.c srcs/ft_get.c srcs/ft_get_file.c srcs/ft_thread.c srcs/get_time.c \
+			  srcs/ft_strnjoin.c
 NAME		= px_ssh
 OBJS_DIR	= objs/
 PROJECT_H	= includes/px_ssh.h
