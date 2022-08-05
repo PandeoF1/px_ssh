@@ -20,7 +20,7 @@
 sudo apt install -y libssh-dev
 
 ## Usage :
-./px_ssh  <nb_threads (0 - 100)> <hosts file> <combo file> <output files>
+./px_ssh nb_threads hosts-file combo-file output files
 
 
 ## Tools :
